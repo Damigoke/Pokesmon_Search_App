@@ -26,7 +26,7 @@ export function transformPokemon(pokemon: Pokemon): TransformedPokemon {
       .split("-")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" "),
-    image: pokemon.sprites.other["artworks"].front_default || pokemon.sprites.front_default,
+    image: pokemon.sprites.other["official-artwork"].front_default || pokemon.sprites.front_default,
     types: pokemon.types.map((t) => t.type.name),
     totalStats,
     averageStat: Math.round(totalStats / pokemon.stats.length),

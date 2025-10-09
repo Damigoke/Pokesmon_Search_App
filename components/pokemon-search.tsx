@@ -29,8 +29,8 @@ export function PokemonSearch() {
         throw new Error(result.error || "Failed to fetch Pokemon")
       }
 
-     
-      const transformed = transformPokemon(result.data)
+      // Transform the single Pokemon into an array
+      const transformed = transformPokemon(result.data) as any
       setPokemons([transformed])
     } catch (error) {
       setError(error instanceof Error ? error.message : "An error occurred")
@@ -54,7 +54,7 @@ export function PokemonSearch() {
         throw new Error(result.error || "Failed to fetch Pokemon")
       }
 
-      const transformed = transformPokemon(result.data)
+      const transformed = transformPokemon(result.data) as any
       setPokemons([transformed])
     } catch (error) {
       setError(error instanceof Error ? error.message : "An error occurred")

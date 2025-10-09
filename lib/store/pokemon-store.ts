@@ -1,3 +1,4 @@
+
 import { create } from "zustand"
 import { TransformedPokemon } from "../types/pokemon"
 
@@ -7,7 +8,7 @@ export interface Pokemon {
   sprites: {
     front_default: string
     other: {
-      "artworks": {
+      "official-artwork": {
         front_default: string
       }
     }
@@ -33,11 +34,11 @@ export interface Pokemon {
 }
 
 interface PokemonStore {
-  pokemons: TransformedPokemon[]
+  pokemons: Pokemon[]
   isLoading: boolean
   error: string | null
   searchQuery: string
-  setPokemons: (pokemons: TransformedPokemon[]) => void
+  setPokemons: (pokemons: Pokemon[]) => void
   setLoading: (isLoading: boolean) => void
   setError: (error: string | null) => void
   setSearchQuery: (query: string) => void
